@@ -1,0 +1,33 @@
+{
+  "name": "ct-client-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "electron": "electron ./dist/main.js",
+    "dev:main": "node ./build/main/watch.js",
+    "build:main": "webpack-cli --config build/main/webpack.config.js --env.prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "antd": "^3.26.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.0",
+    "electron": "^7.1.2",
+    "electron-build": "^0.0.3",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "style-loader": "^1.0.2",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {}
+}
