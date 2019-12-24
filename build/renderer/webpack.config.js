@@ -16,7 +16,12 @@ module.exports = (env)=>{
         },
         module:{
             rules:[
-                loaders.tsLoader
+                loaders.jsLoader,
+                loaders.tsLoader,
+                loaders.cssLoader,
+                loaders.cssModuleLoader,
+                loaders.lessLoader,
+                loaders.lessModuleLoader,
             ]
         }
     }
