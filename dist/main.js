@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! electron */ \"electron\");\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(electron__WEBPACK_IMPORTED_MODULE_0__);\n\nelectron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].on(\"ready\", () => {\n  let win = new electron__WEBPACK_IMPORTED_MODULE_0__[\"BrowserWindow\"]({});\n  win.loadFile(\"./pages/test/index.html\");\n});\nelectron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].on(\"window-all-closed\", () => {\n  electron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].quit();\n});\n\n//# sourceURL=webpack:///./src/main.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! electron */ \"electron\");\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(electron__WEBPACK_IMPORTED_MODULE_0__);\n\nelectron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].on(\"ready\", () => {\n  let win = new electron__WEBPACK_IMPORTED_MODULE_0__[\"BrowserWindow\"]();\n  win.loadFile(\"./ui/index.html\");\n});\nelectron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].on(\"window-all-closed\", () => {\n  electron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].quit();\n});\n\n//# sourceURL=webpack:///./src/main.ts?");
 
 /***/ }),
 

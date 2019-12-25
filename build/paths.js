@@ -6,6 +6,7 @@ const DIST_UI_DIR = path.join(DIST_DIR,'ui')
 const BUILD_DIR = __dirname
 const MAIN_JS = path.join(SRC_DIR,'main.ts')
 const UI_JS = path.join(SRC_DIR,'ui/main.ts')
+const UI_HTML = path.join(SRC_DIR,'ui/index.html')
 
 module.exports={
     PROJ_DIR,
@@ -14,5 +15,7 @@ module.exports={
     DIST_DIR,
     DIST_UI_DIR,
     MAIN_JS,
-    UI_JS
+    UI_JS,
+    UI_HTML,
+    
 }

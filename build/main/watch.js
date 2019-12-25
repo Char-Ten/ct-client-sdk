@@ -7,13 +7,6 @@ const paths = require("../paths");
 const compiler = webpack(config({ dev: 1 }));
 
 let electronProcess = null;
-// compiler.run(() => {
-// 	electronProcess = childProcess.exec("npx electron ./dist/main.js", {
-// 		cwd: paths.PROJ_DIR
-// 	},(e)=>{
-// 		console.log(e)
-// 	});
-// });
 compiler.watch({}, (err, s) => {
 	console.clear();
 	if (err) {
