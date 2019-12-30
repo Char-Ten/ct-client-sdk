@@ -1,5 +1,8 @@
+const webpack = require("webpack")
 const paths = require('../paths')
 const loaders = require("../loaders")
+const common = require("../common")
+
 module.exports=(env)=>{
     console.log(env)
     return {
@@ -20,6 +23,11 @@ module.exports=(env)=>{
             rules:[
                 loaders.tsLoader
             ]
-        }
+        },
+        plugins:[
+            new webpack.DefinePlugin({
+                UI_LINK:env.prod?'./ui/index.html':`http://localhost:${common.UI_PORT}`
+            })
+        ]
     }
 }

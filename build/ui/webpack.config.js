@@ -1,10 +1,12 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const common = require("../common")
 const paths = require("../paths")
 const loaders = require("../loaders")
 
 module.exports = (env)=>{
     return {
         mode:env.prod?'production':'development',
+        target:'electron-renderer',
         entry:paths.UI_JS,
         output:{
             path:paths.DIST_UI_DIR,
@@ -26,6 +28,12 @@ module.exports = (env)=>{
                 loaders.lessLoader,
                 loaders.lessModuleLoader,
             ]
+        },
+        stats:'minimal',
+        devServer:{
+            contentBase:paths.DIST_UI_DIR,
+            port:common.UI_PORT,
+            hot: true
         },
         plugins:[
             new HtmlWebpackPlugin({

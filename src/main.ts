@@ -1,8 +1,8 @@
 import {app,BrowserWindow} from "electron";
-
+import './main.d';
 app.on("ready",()=>{
     let win = new BrowserWindow();
-    win.loadFile("./ui/index.html");
+    win.loadFile(UI_LINK);
 });
 
 app.on("window-all-closed",()=>{
