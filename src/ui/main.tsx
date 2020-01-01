@@ -1,6 +1,11 @@
-import * as React from 'react';
-import ReactDOM from 'react-dom'
-
+import * as React from "react";
+import ReactDOM from "react-dom";
+import { Button } from "antd";
 const appContainer = document.getElementById("app");
-
-ReactDOM.render(<div>hello world</div>,appContainer)
+console.log(Button)
+ReactDOM.render(
+	<div>
+		<Button type="default" shape="round" size="default" >test</Button>
+	</div>,
+	appContainer
+);

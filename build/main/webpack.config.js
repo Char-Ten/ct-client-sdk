@@ -7,7 +7,6 @@ module.exports=(env)=>{
     const babelOption={
         plugins:[
             ["babel-plugin-label-switch",{
-                prefix:/^$/,
                 map:{
                     dev:!env.prod,
                     prod:env.prod

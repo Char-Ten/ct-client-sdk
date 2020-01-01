@@ -11,13 +11,17 @@ const moduleCssLoader = {
 		modules: true
 	}
 };
-const babelLoader = {
+
+
+const getBabelLoader=()=>({
 	loader: "babel-loader",
 	options: {
-        presets: ["@babel/preset-env","@babel/preset-typescript"],
+        presets: ["@babel/preset-react","@babel/preset-env","@babel/preset-typescript"],
         plugins:[]
 	}
-};
+})
+
+const babelLoader = getBabelLoader();
 const jsLoader = {
 	test: jsRegExp,
 	use: [babelLoader]
@@ -47,8 +51,10 @@ const cssModuleLoader = {
 };
 
 const addBabelOptionToLoader = (loader,options)=>{
-    loader.use[0].options.plugins.concat(options.plugins||[])
-    loader.use[0].options.presets.concat(options.presets||[])
+	let babelLoader = getBabelLoader();
+	babelLoader.options.plugins.push(...(options.plugins||[]));
+	babelLoader.options.presets.push(...(options.presets||[]));
+    loader.use[0]=babelLoader
     return loader
 }
 
