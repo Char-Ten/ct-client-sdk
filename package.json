@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "electron": "electron ./dist/main.js",
+    "dev:ui": "node ./build/ui/watch.js",
     "dev:main": "node ./build/main/watch.js",
     "build:main": "webpack-cli --config build/main/webpack.config.js --env.prod",
     "build:ui": "webpack-cli --config build/ui/webpack.config.js --env.prod"
@@ -13,14 +14,16 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "antd": "^3.26.3",
     "babel-loader": "^8.0.6",
+    "babel-plugin-label-switch": "^1.0.0",
     "css-loader": "^3.4.0",
-    "electron": "^7.1.7",
+    "electron": "7.1.7",
     "electron-build": "^0.0.3",
     "html-webpack-plugin": "3.2.0",
     "less": "^3.10.3",
@@ -32,6 +35,7 @@
     "typescript": "^3.7.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
     "xterm": "^4.3.0"
   },
   "dependencies": {}

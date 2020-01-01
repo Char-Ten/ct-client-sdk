@@ -30,11 +30,6 @@ module.exports = (env)=>{
             ]
         },
         stats:'minimal',
-        devServer:{
-            contentBase:paths.DIST_UI_DIR,
-            port:common.UI_PORT,
-            hot: true
-        },
         plugins:[
             new HtmlWebpackPlugin({
                 filename: "index.html",

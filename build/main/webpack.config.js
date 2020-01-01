@@ -4,7 +4,17 @@ const loaders = require("../loaders")
 const common = require("../common")
 
 module.exports=(env)=>{
-    console.log(env)
+    const babelOption={
+        plugins:[
+            ["babel-plugin-label-switch",{
+                prefix:/^$/,
+                map:{
+                    dev:!env.prod,
+                    prod:env.prod
+                }
+            }]
+        ]
+    }
     return {
         mode:env.prod?'production':'development',
         target:'electron-main',
@@ -21,12 +31,20 @@ module.exports=(env)=>{
         },
         module:{
             rules:[
-                loaders.tsLoader
+                loaders.addBabelOptionToLoader(
+                    loaders.jsLoader,
+                    babelOption
+                ),
+                loaders.addBabelOptionToLoader(
+                    loaders.tsLoader,
+                    babelOption
+                )
             ]
         },
+        devtool:env.prod?'source-map':'cheap-eval-source-map',
         plugins:[
             new webpack.DefinePlugin({
-                UI_LINK:env.prod?'./ui/index.html':`http://localhost:${common.UI_PORT}`
+                UI_LINK:JSON.stringify(env.prod?'./ui/index.html':`http://localhost:${common.UI_PORT}`)
             })
         ]
     }

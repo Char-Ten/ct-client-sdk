@@ -1,8 +1,8 @@
 const webpack = require("webpack");
 const childProcess = require("child_process");
-const path = require("path");
 const config = require("./webpack.config");
 const paths = require("../paths");
+const utils = require("../utils")
 
 const compiler = webpack(config({ dev: 1 }));
 
@@ -15,7 +15,7 @@ compiler.watch({}, (err, s) => {
 	}
 	if (electronProcess && electronProcess.pid) {
 		electronProcess.removeAllListeners();
-		kill(electronProcess.pid);
+		utils.kill(electronProcess.pid);
 	}
 	electronProcess = childProcess.spawn(
 		process.platform === "win32" ? "npm.cmd" : "npm",
@@ -32,9 +32,3 @@ compiler.watch({}, (err, s) => {
 		process.exit();
 	});
 });
-
-function kill(pid) {
-	childProcess.execSync(
-		process.platform === "win32" ? `taskkill /pid ${pid} -t -f` : `kill pid`
-	);
-}

@@ -1,1 +1,0 @@
-declare const UI_LINK:string

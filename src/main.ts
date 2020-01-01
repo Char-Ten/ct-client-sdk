@@ -1,8 +1,15 @@
 import {app,BrowserWindow} from "electron";
-import './main.d';
+declare const UI_LINK:string;
 app.on("ready",()=>{
     let win = new BrowserWindow();
-    win.loadFile(UI_LINK);
+    $dev:{
+        win.loadURL(UI_LINK);
+        
+    }
+    $prod:{
+        win.loadFile(UI_LINK);
+    }
+    
 });
 
 app.on("window-all-closed",()=>{

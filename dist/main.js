@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! electron */ \"electron\");\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(electron__WEBPACK_IMPORTED_MODULE_0__);\n\nelectron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].on(\"ready\", () => {\n  let win = new electron__WEBPACK_IMPORTED_MODULE_0__[\"BrowserWindow\"]();\n  win.loadFile(\"./ui/index.html\");\n});\nelectron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].on(\"window-all-closed\", () => {\n  electron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].quit();\n});\n\n//# sourceURL=webpack:///./src/main.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! electron */ \"electron\");\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(electron__WEBPACK_IMPORTED_MODULE_0__);\n\nelectron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].on(\"ready\", function () {\n  var win = new electron__WEBPACK_IMPORTED_MODULE_0__[\"BrowserWindow\"]();\n\n  $dev: {\n    win.loadURL(\"http://localhost:5566\");\n  }\n\n  $prod: {\n    win.loadFile(\"http://localhost:5566\");\n  }\n});\nelectron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].on(\"window-all-closed\", function () {\n  electron__WEBPACK_IMPORTED_MODULE_0__[\"app\"].quit();\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbWFpbi50cy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9tYWluLnRzPzJhNWEiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgYXBwLCBCcm93c2VyV2luZG93IH0gZnJvbSBcImVsZWN0cm9uXCI7XG5hcHAub24oXCJyZWFkeVwiLCBmdW5jdGlvbiAoKSB7XG4gIHZhciB3aW4gPSBuZXcgQnJvd3NlcldpbmRvdygpO1xuXG4gICRkZXY6IHtcbiAgICB3aW4ubG9hZFVSTChVSV9MSU5LKTtcbiAgfVxuXG4gICRwcm9kOiB7XG4gICAgd2luLmxvYWRGaWxlKFVJX0xJTkspO1xuICB9XG59KTtcbmFwcC5vbihcIndpbmRvdy1hbGwtY2xvc2VkXCIsIGZ1bmN0aW9uICgpIHtcbiAgYXBwLnF1aXQoKTtcbn0pOyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/main.ts\n");
 
 /***/ }),
 
@@ -105,7 +105,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var elec
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"electron\");\n\n//# sourceURL=webpack:///external_%22electron%22?");
+module.exports = require("electron");
 
 /***/ })
 
