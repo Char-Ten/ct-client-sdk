@@ -6,6 +6,14 @@ module.exports = env => {
 	const babelOption = {
 		plugins: [
 			[
+				"babel-plugin-import",
+				{
+					libraryName: "antd",
+					libraryDirectory: "es",
+					style: "less"
+				}
+			],
+			[
 				"babel-plugin-label-switch",
 				{
 					map: {
@@ -13,23 +21,9 @@ module.exports = env => {
 						prod: env.prod
 					}
 				}
-			],
-			[
-				"babel-plugin-import",
-				{
-					libraryName: "antd",
-					libraryDirectory: "es",
-					style: "less"
-				}
 			]
 		]
     };
-    console.log(
-        (loaders.addBabelOptionToLoader(
-            loaders.jsLoader,
-            babelOption
-        ))
-    )
 	return {
 		mode: env.prod ? "production" : "development",
 		target: "electron-renderer",

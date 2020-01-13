@@ -24,10 +24,12 @@ const getBabelLoader=()=>({
 const babelLoader = getBabelLoader();
 const jsLoader = {
 	test: jsRegExp,
+	exclude:/node_module/,
 	use: [babelLoader]
 };
 const tsLoader = {
 	test: tsRegExp,
+	exclude:/node_module/,
 	use: [babelLoader]
 };
 const lessLoader = {
